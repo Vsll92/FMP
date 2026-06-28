@@ -1,0 +1,6 @@
+player_name,player_id,team_name_canon,primary_position,secondary_positions,position_group,source,source_url,confidence,notes
+O. Édouard,,Racing Club de Lens,FW,ST;CF,ST,Transfermarkt,https://www.transfermarkt.com/odsonne-edouard/profil/spieler/425749,high,Striker/forward — event-mode mislabels as CAM
+M. Thauvin,,Racing Club de Lens,RW,AM;RM,Winger,Transfermarkt,https://www.transfermarkt.com,medium,Right winger / wide forward
+F. Sotoca,,Racing Club de Lens,FW,RW;ST,ST,Transfermarkt,https://www.transfermarkt.com,medium,Forward
+W. Saïd,,Racing Club de Lens,FW,ST;CF,ST,EventConfirmed,,medium,Centre-forward (event CF agrees)
+A. Gradit,,Racing Club de Lens,CB,,CB,Transfermarkt,https://www.transfermarkt.com,medium,Centre-back
