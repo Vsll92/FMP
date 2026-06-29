@@ -1,0 +1,37 @@
+name: Auto Analyze, Cleanup & Update Docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  analyze-cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pathspec gitignore-parser pydantic pyyaml
+
+      - name: Run project analyzer & cleanup
+        run: python scripts/auto_project_analyzer.py
+
+      - name: Generate/Update documentation
+        run: python scripts/auto_doc_generator.py
+
+      - name: Commit changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Analyzer Bot"
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "docs: auto-generated documentation and cleanup"
+          git push
